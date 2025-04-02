@@ -32,7 +32,7 @@ const LetterC  = () => {
       const contentToSave = localStorage.getItem("letterContent");
       const titleToSave = localStorage.getItem("letterTitle")
       setText(codeResponse.access_token);
-      if(contentToSave == '' || titleToSave == ''){
+      if(contentToSave == '' || titleToSave == '' || contentToSave.length == 0 || titleToSave.length == 0){
         showToast('info', 'Please fill in the content and title before saving');
         return false;
       }
@@ -64,7 +64,7 @@ const LetterC  = () => {
   const directSaveToDrive = async () => {
     const contentToSave = localStorage.getItem("letterContent");
     const titleToSave = localStorage.getItem("letterTitle");
-    if(contentToSave == '' || titleToSave == ''){
+    if(contentToSave == '' || titleToSave == '' || contentToSave.length == 0 || titleToSave.length == 0){
       showToast('info', 'Please fill in the content and title before saving');
       return false;
     }
