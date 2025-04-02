@@ -34,7 +34,7 @@ const LetterC  = () => {
       setText(codeResponse.access_token);
       if(contentToSave == '' || titleToSave == ''){
         showToast('info', 'Please fill in the content and title before saving');
-        return;
+        return false;
       }
       setAuthCode(codeResponse.access_token);
       showToast('info', 'Successfully Logged In. Now Saving to Drive ...');
@@ -66,7 +66,7 @@ const LetterC  = () => {
     const titleToSave = localStorage.getItem("letterTitle");
     if(contentToSave == '' || titleToSave == ''){
       showToast('info', 'Please fill in the content and title before saving');
-      return;
+      return false;
     }
     try {
       setLoading(true)
