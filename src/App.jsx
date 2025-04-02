@@ -20,7 +20,7 @@ function AppContent() {
         <h1 className="text-4xl font-bold mb-6 text-primary">Letter Management System</h1>
         <button
           onClick={login}
-          className="px-4 py-2 bg-blue-50 text-black rounded-lg items-center"
+          className="px-4 py-2 bg-blue-50 text-black rounded-lg flex items-center"
         >
           <FcGoogle className="text-xl mr-4"  />
           Login with Google
