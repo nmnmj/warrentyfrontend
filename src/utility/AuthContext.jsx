@@ -23,7 +23,6 @@ const AuthProvider = ({ children }) => {
 
       setUser(res.data.user);
     } catch (err) {
-      setUser(null);
     }
   };
 
