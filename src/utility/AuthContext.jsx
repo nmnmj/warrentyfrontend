@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchUser();
+    if (!user) fetchUser(); 
   }, []);
 
   // Login: Redirect to the Google login route on your backend
@@ -45,6 +45,7 @@ const AuthProvider = ({ children }) => {
       
         if (event.data.id != null) {
           setUser(event.data)
+          localStorage.setItem("user", JSON.stringify(event.data));
           showToast('success', 'Successfully Logged In');
         }
     }
@@ -58,6 +59,7 @@ const AuthProvider = ({ children }) => {
         withCredentials: true,
       });
       setUser(null);
+      localStorage.removeItem("user");
       showToast('success', 'Successfully Logged Out');
     } catch (err) {
       console.error("Logout failed", err);
